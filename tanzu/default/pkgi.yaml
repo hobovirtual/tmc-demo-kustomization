@@ -9,7 +9,7 @@ spec:
     - name: tanzu-packages-ns
     - name: cert-manager-sa
   interval: 1m0s
-  path: ./pkgi/cert-manager
+  path: ./tanzu/pkgi/cert-manager
   prune: true
   sourceRef:
     kind: GitRepository
@@ -27,7 +27,7 @@ spec:
     - name: contour-sa
     - name: cert-manager
   interval: 1m0s
-  path: ./pkgi/contour
+  path: ./tanzu/pkgi/contour
   prune: true
   sourceRef:
     kind: GitRepository

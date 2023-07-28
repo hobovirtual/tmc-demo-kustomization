@@ -8,7 +8,7 @@ spec:
   dependsOn:
     - name: tanzu-packages-ns
   interval: 1m0s
-  path: ./service-accounts/cert-manager
+  path: ./tanzu/service-accounts/cert-manager
   prune: true
   sourceRef:
     kind: GitRepository
@@ -24,7 +24,7 @@ spec:
   dependsOn:
     - name: tanzu-packages-ns
   interval: 1m0s
-  path: ./service-accounts/contour
+  path: ./tanzu/service-accounts/contour
   prune: true
   sourceRef:
     kind: GitRepository
