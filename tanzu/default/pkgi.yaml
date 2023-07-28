@@ -25,7 +25,7 @@ spec:
   dependsOn:
     - name: tanzu-packages-ns
     - name: contour-sa
-    - name: cert-manager
+    - name: cert-manager-pkgi
   interval: 1m0s
   path: ./tanzu/pkgi/contour
   prune: true
