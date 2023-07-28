@@ -13,7 +13,7 @@ spec:
   prune: true
   sourceRef:
     kind: GitRepository
-    name: tmc-demo-kustomization 
+    name: tanzu-kustomization
     namespace: tanzu-continuousdelivery-resources
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
