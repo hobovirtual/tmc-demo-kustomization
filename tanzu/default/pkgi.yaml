@@ -1,0 +1,17 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: cert-manager-pkgi
+  namespace: tanzu-continuousdelivery-resources
+spec:
+  dependsOn:
+    - name: tanzu-packages-ns
+    - name: cert-manager-sa
+  interval: 1m0s
+  path: ./pkgi/cert-manager
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: tmc-demo-kustomization 
+    namespace: tanzu-continuousdelivery-resources
