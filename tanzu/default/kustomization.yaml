@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
 - ns.yaml
 - sa.yaml
-- tanzu-package-cert-manager.yaml
+- pkgi.yaml
