@@ -28,7 +28,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: contour-packages-sa
-  namespace: packages
+  namespace: tanzu-packages
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -37,4 +37,4 @@ metadata:
     tkg.tanzu.vmware.com/tanzu-package: contour-packages
     kapp.k14s.io/update-strategy: "fallback-on-replace"
   name: contour-packages-sa
-  namespace: packages
+  namespace: tanzu-packages
