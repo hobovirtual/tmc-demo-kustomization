@@ -6,7 +6,7 @@ metadata:
   namespace: tanzu-continuousdelivery-resources
 spec:
   dependsOn:
-    - name: tanzu-packages-namespaces
+    - name: tanzu-packages-ns
   interval: 1m0s
   path: ./service-accounts/cert-manager
   prune: true
@@ -22,7 +22,7 @@ metadata:
   namespace: tanzu-continuousdelivery-resources
 spec:
   dependsOn:
-    - name: tanzu-packages-namespaces
+    - name: tanzu-packages-ns
   interval: 1m0s
   path: ./service-accounts/contour
   prune: true
