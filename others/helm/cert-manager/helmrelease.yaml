@@ -1,0 +1,23 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRelease
+metadata:
+  name: tanzu-helmrelease-resources-cert-manager
+  namespace: tanzu-helm-resources
+spec:
+  chart:
+    spec:
+      chart: cert-manager
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+      version: 0.11.9
+  install:
+    createNamespace: true
+  interval: 10m0s
+  serviceAccountName: cert-manager-helm-sa
+  targetNamespace: cert-manager
+  valuesFrom:
+  - kind: Secret
+    name: cert-manager-helm-secret
+    valuesKey: inline-configurations

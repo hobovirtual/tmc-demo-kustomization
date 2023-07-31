@@ -1,0 +1,13 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmChart
+metadata:
+  name: tanzu-helmchart-resources-cert-manager
+  namespace: tanzu-helm-resources
+spec:
+  chart: cert-manager
+  interval: 10m0s
+  reconcileStrategy: ChartVersion
+  sourceRef:
+    kind: HelmRepository
+    name: bitnami
+  version: 0.11.9
