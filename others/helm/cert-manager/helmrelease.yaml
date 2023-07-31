@@ -19,5 +19,5 @@ spec:
   targetNamespace: cert-manager
   valuesFrom:
   - kind: Secret
-    name: cert-manager-helm-secret
-    valuesKey: inline-configurations
+    name: cert-manager-helm-values
+    valuesKey: values
