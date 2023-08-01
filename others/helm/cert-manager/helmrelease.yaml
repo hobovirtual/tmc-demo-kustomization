@@ -15,7 +15,7 @@ spec:
   install:
     createNamespace: true
   interval: 10m0s
-  serviceAccountName: cert-manager-helm-sa
+  serviceAccountName: default
   targetNamespace: cert-manager
   valuesFrom:
   - kind: Secret
