@@ -5,7 +5,7 @@ generatorOptions:
 resources:
 - helmrelease.yaml
 secretGenerator:
-- name: values
+- name: cert-manager-helm-values
   namespace: tanzu-helm-resources
   files:
   - values.yaml
