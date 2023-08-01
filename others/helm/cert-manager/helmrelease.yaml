@@ -20,4 +20,5 @@ spec:
   valuesFrom:
   - kind: Secret
     name: cert-manager-helm-values
+    namespace: tanzu-helm-resources
     valuesKey: values
