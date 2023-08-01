@@ -9,7 +9,7 @@ roleRef:
   name: helm-deployment-admin-role
 subjects:
 - kind: ServiceAccount
-  name: cert-manager-packages-sa
+  name: ccert-manager-helm-sa
   namespace: tanzu-helm-resources
 ---
 apiVersion: v1
