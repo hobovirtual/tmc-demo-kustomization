@@ -1,24 +1,12 @@
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  name: cert-manager-helm-cluster-role
-rules:
-- apiGroups:
-  - '*'
-  resources:
-  - '*'
-  verbs:
-  - '*'
----
-apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   name: cert-manager-helm-cluster-rolebinding
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: cert-manager-helm-cluster-role
+  name: helm-deployment-admin-role
 subjects:
 - kind: ServiceAccount
   name: cert-manager-packages-sa
