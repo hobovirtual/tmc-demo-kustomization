@@ -13,6 +13,9 @@ spec:
         name: bitnami
         namespace: tanzu-helm-resources
   interval: 10m0s
+  install:
+    createNamespace: true
+  targetNamespace: cert-manager
   valuesFrom:
   - kind: Secret
     name: cert-manager-helm-values
