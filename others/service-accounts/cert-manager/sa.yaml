@@ -10,10 +10,10 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: cert-manager-helm-sa
-  namespace: tanzu-helm-resources
+  namespace: tanzu-helm
 ---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: cert-manager-helm-sa
-  namespace: tanzu-helm-resources
+  namespace: tanzu-helm
