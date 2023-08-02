@@ -3,23 +3,16 @@ kind: HelmRelease
 metadata:
   name: tanzu-helm-resources-cert-manager
   namespace: tanzu-helm
-  annotations:
-    tmc.cloud.vmware.com/managed-helm-release-name: tanzu-helm-resources-cert-manager
 spec:
   chart:
     spec:
       chart: cert-manager
-      reconcileStrategy: ChartVersion
+      version: '0.11.9'
       sourceRef:
         kind: HelmRepository
         name: bitnami
         namespace: tanzu-helm-resources
-      version: 0.11.9
-  install:
-    createNamespace: true
   interval: 10m0s
-  serviceAccountName: cert-manager-helm-sa
-  targetNamespace: cert-manager
   valuesFrom:
   - kind: Secret
     name: cert-manager-helm-values
