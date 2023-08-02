@@ -1,8 +1,8 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: tanzu-helm-resources-cert-manager
-  namespace: tanzu-helm
+  name: helm-cert-manager
+  namespace: cert-manager
 spec:
   chart:
     spec:
