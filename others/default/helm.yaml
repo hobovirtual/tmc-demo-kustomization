@@ -6,7 +6,7 @@ metadata:
   namespace: tanzu-continuousdelivery-resources
 spec:
   dependsOn:
-    - name: cert-manager-sa
+    - name: cert-manager-ns
   interval: 1m0s
   path: ./others/helm/cert-manager
   prune: true
