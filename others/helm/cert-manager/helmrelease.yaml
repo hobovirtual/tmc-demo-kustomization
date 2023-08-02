@@ -7,6 +7,7 @@ spec:
   chart:
     spec:
       chart: cert-manager
+      valuesFile: values.yaml
       version: '0.11.9'
       sourceRef:
         kind: HelmRepository
@@ -14,8 +15,5 @@ spec:
         namespace: tanzu-helm-resources
   interval: 10m0s
   install:
-    createNamespace: true
-  valuesFrom:
-  - kind: Secret
-    name: cert-manager-helm-values
-    valuesKey: values.yaml
+    crds: true
+  targetNamespace: cert-manager
