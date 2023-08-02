@@ -1,12 +1,101 @@
 ---
 apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: helm-cert-manager-clusterrole
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - secrets
+  - configmaps
+  verbs:
+  - get
+  - list
+  - watch
+  - update
+- apiGroups:
+  - apiextensions.k8s.io
+  resources:
+  - '*'
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - namespaces
+  verbs:
+  - list
+- apiGroups:
+  - intents.tmc.cloud.vmware.com
+  resources:
+  - fluxcdhelms
+  - managedhelmreleases
+  - managedhelmrepositories
+  verbs:
+  - '*'
+- apiGroups:
+  - intents.tmc.cloud.vmware.com
+  resources:
+  - fluxcdhelms/status
+  - managedhelmreleases/status
+  - managedhelmrepositories/status
+  verbs:
+  - get
+  - update
+  - patch
+- apiGroups:
+  - source.toolkit.fluxcd.io
+  resources:
+  - helmrepositories
+  - helmcharts
+  verbs:
+  - '*'
+- apiGroups:
+  - helm.toolkit.fluxcd.io
+  resources:
+  - helmreleases
+  verbs:
+  - '*'
+- apiGroups:
+  - clusters.tmc.cloud.vmware.com
+  resources:
+  - agents
+  - extensions
+  - extensionresourceowners
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - serviceaccounts
+  verbs:
+  - get
+  - watch
+  - create
+  - list
+- apiGroups:
+  - rbac.authorization.k8s.io
+  resources:
+  - clusterrolebindings
+  verbs:
+  - get
+  - watch
+  - create
+  - list
+---
+apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   name: cert-manager-helm-admin-rolebinding
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: helm-deployment-admin-role
+  name: helm-cert-manager-clusterrole
 subjects:
 - kind: ServiceAccount
   name: cert-manager-helm-sa
