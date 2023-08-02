@@ -6,7 +6,7 @@ resources:
 - helmrelease.yaml
 secretGenerator:
 - name: cert-manager-helm-values
-  namespace: tanzu-helm-resources
+  namespace: tanzu-helm
   files:
   - values.yaml
   type: Opaque
