@@ -10,3 +10,6 @@ secretGenerator:
   files:
   - values.yaml
   type: Opaque
+  options:
+    annotations:
+      tmc.cloud.vmware.com/managed-helm-release-name: tanzu-helm-resources-cert-manager

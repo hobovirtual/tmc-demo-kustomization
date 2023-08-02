@@ -3,6 +3,8 @@ kind: HelmRelease
 metadata:
   name: tanzu-helm-resources-cert-manager
   namespace: tanzu-helm
+  annotations:
+    tmc.cloud.vmware.com/managed-helm-release-name: tanzu-helm-resources-cert-manager
 spec:
   chart:
     spec:
