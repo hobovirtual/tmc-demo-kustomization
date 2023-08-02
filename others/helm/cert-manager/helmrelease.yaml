@@ -14,6 +14,4 @@ spec:
         name: bitnami
         namespace: tanzu-helm-resources
   interval: 10m0s
-  install:
-    crds: true
   targetNamespace: cert-manager
