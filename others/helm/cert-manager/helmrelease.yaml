@@ -15,3 +15,7 @@ spec:
         name: bitnami
         namespace: tanzu-helm-resources
   interval: 10m0s
+  valuesFrom:
+  - kind: Secret
+    name: cert-manager-values
+    valuesKey: values.yaml
