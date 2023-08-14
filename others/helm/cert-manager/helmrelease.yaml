@@ -20,7 +20,3 @@ spec:
     createNamespace: true
   targetNamespace: cert-manager
   interval: 10m0s
-  valuesFrom:
-  - kind: Secret
-    name: cert-manager-values
-    valuesKey: values.yaml
