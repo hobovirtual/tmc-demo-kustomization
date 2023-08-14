@@ -1,6 +1,8 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
+  annotations:
+    tmc.cloud.vmware.com/managed-helm-release-name: helm-cert-manager
   name: helm-cert-manager
   namespace: cert-manager
 spec:
