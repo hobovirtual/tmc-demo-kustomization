@@ -4,3 +4,7 @@ generatorOptions:
   disableNameSuffixHash: true
 resources:
 - helmrelease.yaml
+secretGenerator:
+  - name: cert-manager-values
+    files:
+      - values.yaml=cert-manager-values.yaml
