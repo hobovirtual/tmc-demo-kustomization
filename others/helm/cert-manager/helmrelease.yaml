@@ -10,7 +10,7 @@ spec:
     spec:
       chart: cert-manager
       valuesFiles: 
-      - ./others/helm/cert-manager/values.yaml
+      - values.yaml
       version: '0.11.9'
       sourceRef:
         kind: HelmRepository
