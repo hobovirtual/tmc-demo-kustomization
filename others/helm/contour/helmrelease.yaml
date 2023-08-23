@@ -8,7 +8,7 @@ metadata:
 spec:
   chart:
     spec:
-      chart: cert-manager
+      chart: contour
       valuesFiles: 
       - values.yaml
       version: '12.4.0'
