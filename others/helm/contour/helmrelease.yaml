@@ -2,8 +2,8 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   annotations:
-    tmc.cloud.vmware.com/managed-helm-release-name: helm-cert-manager
-  name: helm-cert-manager
+    tmc.cloud.vmware.com/managed-helm-release-name: helm-contour
+  name: helm-contour
   namespace: tanzu-helm-resources
 spec:
   chart:
@@ -11,12 +11,12 @@ spec:
       chart: cert-manager
       valuesFiles: 
       - values.yaml
-      version: '0.11.9'
+      version: '12.4.0'
       sourceRef:
         kind: HelmRepository
         name: bitnami
         namespace: tanzu-helm-resources
   install:
     createNamespace: true
-  targetNamespace: cert-manager
+  targetNamespace: contour
   interval: 10m0s
