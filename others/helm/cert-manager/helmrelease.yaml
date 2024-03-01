@@ -11,7 +11,7 @@ spec:
       chart: cert-manager
       valuesFiles: 
       - values.yaml
-      version: '0.11.9'
+      version: '0.22.1'
       sourceRef:
         kind: HelmRepository
         name: bitnami
